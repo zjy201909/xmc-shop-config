@@ -45,7 +45,8 @@ management:
       exposure:
         include: '*'
         
-        
+
+
 ---
 server:
  port: 8081
@@ -84,7 +85,7 @@ info:
   build.modelVersion: $project.modelVersion$
 
 management:
-  endpoints:
-    web:
-      exposure:
-        include: '*'
+   endpoints:
+      web:
+         exposure:
+            include: '*'
