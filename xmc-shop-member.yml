@@ -19,12 +19,12 @@ spring:
    name: xmc-shop-member
  profiles: dev
  rabbitmq:
-   host:127.0.0.1
-   port:5672
-   username:guest
-   password:guest
-   publisher-confirms:true
-   virtual-host:/
+   host: 127.0.0.1
+   port: 5672
+   username: guest
+   password: guest
+   publisher-confirms: true
+   virtual-host: /
  redis:
    host: 127.0.0.1
    port: 6379
@@ -87,12 +87,12 @@ spring:
      max-active: 1000
      max-wait: -1
  rabbitmq:
-   host:127.0.0.1
-   port:5672
-   username:guest
-   password:guest
-   publisher-confirms:true
-   virtual-host:/
+   host: 127.0.0.1
+   port: 5672
+   username: guest
+   password: guest
+   publisher-confirms: true
+   virtual-host: /
 
 logging:
   level:
