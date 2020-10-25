@@ -11,19 +11,19 @@ spring:
    name: xmc-shop-email
  profiles: dev
  rabbitmq:
-   host:127.0.0.1
-   port:5672
-   username:guest
-   password:guest
-   publisher-confirms:true
-   virtual-host:/
+   host: 127.0.0.1
+   port: 5672
+   username: guest
+   password: guest
+   publisher-confirms: true
+   virtual-host: /
 
 eureka:
   client: # 客户端进行Eureka注册的配置
     service-url:
       defaultZone: http://root:root@eureka1:7001/eureka
   instance:
-    instance-id: xmc-shop-member
+    instance-id: xmc-shop-email-01
     prefer-ip-address: true
     lease-renewal-interval-in-seconds: 10 # 设置心跳的时间间隔（默认是30秒）
     lease-expiration-duration-in-seconds: 30  # 如果现在超过了5秒的间隔（默认是90秒）
@@ -50,12 +50,12 @@ spring:
    name: xmc-shop-email
  profiles: beta
  rabbitmq:
-   host:127.0.0.1
-   port:5672
-   username:guest
-   password:guest
-   publisher-confirms:true
-   virtual-host:/
+   host: 127.0.0.1
+   port: 5672
+   username: guest
+   password: guest
+   publisher-confirms: true
+   virtual-host: /
 
 
 eureka:
