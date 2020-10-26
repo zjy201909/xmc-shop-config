@@ -17,6 +17,16 @@ spring:
    password:guest
    publisher-confirms:true
    virtual-host:/
+ mail:
+   host: smtp.163.com
+   username: zjy1997714@163.com
+   password: SOQVWBBNKVXGMRPN
+   enable:  true
+   smtp:
+     auth: true
+   starttls:
+     enable: true
+     required: true
 
 eureka:
   client: # 客户端进行Eureka注册的配置
@@ -56,6 +66,16 @@ spring:
    password:guest
    publisher-confirms:true
    virtual-host:/
+ mail:
+   host: smtp.163.com
+   username: zjy1997714@163.com
+   password: SOQVWBBNKVXGMRPN
+   enable:  true
+   smtp:
+     auth: true
+   starttls:
+     enable: true
+     required: true
 
 
 eureka:
