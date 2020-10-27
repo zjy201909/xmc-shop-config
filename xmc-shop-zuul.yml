@@ -8,6 +8,7 @@ server:
 spring:
   application:
     name:  xmc-shop-zuul
+  profiles: dev
   security:
     user:
       name: root
