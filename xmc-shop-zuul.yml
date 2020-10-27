@@ -37,8 +37,8 @@ zuul:
   ignored-services:
     "*"
   prefix: /xmc-shop
-  #sensitive-headers: 
-   # - Cookie,Set-Cookie,Authorization
+  sensitive-headers: 
+    - Cookie,Set-Cookie,Authorization
   #未测试 
   ratelimit:
     # 开启限流
