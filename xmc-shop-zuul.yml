@@ -23,6 +23,11 @@ eureka:
     prefer-ip-address: true
     lease-renewal-interval-in-seconds: 2 # 设置心跳的时间间隔（默认是30秒）
     lease-expiration-duration-in-seconds: 5 # 如果现在超过了5秒的间隔（默认是90秒）
+info:
+  app.name: xmc-shop-zuul
+  company.name: bbu
+  build.artifactId: $project.artifactId$
+  build.modelVersion: $project.modelVersion$
 zuul:
   #zuul的代理路径
   routes:
@@ -32,8 +37,8 @@ zuul:
   ignored-services:
     "*"
   prefix: /xmc-shop
-  sensitive-headers: 
-    - Cookie,Set-Cookie,Authorization
+  #sensitive-headers: 
+   # - Cookie,Set-Cookie,Authorization
   #未测试 
   ratelimit:
     # 开启限流
