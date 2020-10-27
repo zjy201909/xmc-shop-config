@@ -1,0 +1,53 @@
+spring:
+  profiles:
+    active:
+      - dev
+---
+server:
+  port: 9501
+spring:
+  application:
+    name:  xmc-shop-zuul
+  security:
+    user:
+      name: root
+      password: root
+eureka:
+  client: # 客户端进行Eureka注册的配置
+    service-url:
+      defaultZone: http://root:root@eureka1:7001/eureka
+    #register-with-eureka: false
+  instance:
+    instance-id: xmc-shop-zuul-01
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 2 # 设置心跳的时间间隔（默认是30秒）
+    lease-expiration-duration-in-seconds: 5 # 如果现在超过了5秒的间隔（默认是90秒）
+zuul:
+  #zuul的代理路径
+  routes:
+    product:
+      path: /member-proxy/**
+      serviceId: xmc-shop-member
+  ignored-services:
+    "*"
+  prefix: /xmc-shop
+  sensitive-headers: 
+    - Cookie,Set-Cookie,Authorization
+  #未测试 
+  ratelimit:
+    # 开启限流
+    enabled: true
+    # 存储方式
+    #repository: REDIS
+    # 限流策略
+    policies:
+      # 指定限流服务
+      xmc-shop-member:
+        # 每个周期内请求次数
+        limit: 3
+        # 单位时间内允许访问的总时间
+        quota: 30
+        # 周期时间
+        refresh-interval: 60
+        # 限流方式 USER 根据用户；ORIGIN 原始请求；URL 请求地址；
+        type: ORIGIN
